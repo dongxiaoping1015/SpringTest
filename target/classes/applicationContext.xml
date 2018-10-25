@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://127.0.0.1:3306/day20" />-->
+        <!--<property name="username" value="root" />-->
+        <!--<property name="password" value="yesyes" />-->
+    <!--</bean>-->
+
+    <!--<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://127.0.0.1:3306/day20" />-->
+        <!--<property name="username" value="root" />-->
+        <!--<property name="password" value="yesyes" />-->
+    <!--</bean>-->
+
+    <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.user}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="location" value="jdbc.properties" />-->
+    <!--</bean>-->
+
+    <context:property-placeholder location="jdbc.properties" />
+
+    <bean id="myJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="myDataSource" />
+    </bean>
+
+    <bean id="myStudentDao" class="dao.StudentDaoImpl">
+        <property name="jdbcTemplate" ref="myJdbcTemplate" />
+    </bean>
+
+    <bean id="myStudentService" class="service.StudentServiceImpl">
+        <property name="dao" ref="myStudentDao" />
+    </bean>
+
+    <!--<bean id="myAspect" class="aspectxml.MyAspect" />-->
+    <!--<bean id="someService" class="aop.ISomeServiceImpl" />-->
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="doFirstPointcut" expression="execution(* *..ISomeService.doFirst(..))" />-->
+        <!--<aop:pointcut id="doSecondPointcut" expression="execution(* *..ISomeService.doSecond(..))" />-->
+
+        <!--<aop:aspect ref="myAspect">-->
+            <!--<aop:before method="before" pointcut-ref="doFirstPointcut"/>-->
+            <!--<aop:before method="before(org.aspectj.lang.JoinPoint)" pointcut-ref="doFirstPointcut" />-->
+
+            <!--<aop:after-returning method="myAfter" pointcut-ref="doSecondPointcut" returning="result" />-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+
+    <!--<bean id="myAspect" class="aspect.MyAspect" />-->
+    <!--<bean id="someService" class="aop.ISomeServiceImpl" />-->
+
+    <!--<aop:aspectj-autoproxy />-->
+
+    <!--<bean id="someService" class="aop.ISomeServiceImpl" />-->
+    <!--<bean id="someService2" class="aop.ISomeServiceImpl" />-->
+
+    <!--<bean id="myAdvice" class="aop.MyMethodBeforeAdvice" />-->
+
+    <!--<bean id="myAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">-->
+        <!--<property name="advice" ref="myAdvice" />-->
+        <!--<property name="mappedName" value="doFirst" />-->
+    <!--</bean>-->
+    <!--<bean id="myAdvisor2" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">-->
+        <!--<property name="advice" ref="myAdvice" />-->
+        <!--<property name="mappedName" value="doSecond" />-->
+    <!--</bean>-->
+
+    <!--<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">-->
+        <!--<property name="beanNames" value="someService" />-->
+        <!--<property name="interceptorNames" value="myAdvisor" />-->
+    <!--</bean>-->
+</beans>
