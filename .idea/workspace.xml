@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0eea4ed-2336-44dd-941c-fea79958ddf0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/stock/dao/AccountDaoImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/stock/dao/StockDaoImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/stock/dao/AccountDaoImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/stock/dao/StockDaoImpl.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/stock/dao/IAccountDao.class" afterPath="$PROJECT_DIR$/target/classes/stock/dao/IAccountDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/stock/dao/IStockDao.class" afterPath="$PROJECT_DIR$/target/classes/stock/dao/IStockDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringTest.iml" afterPath="$PROJECT_DIR$/SpringTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/beans/Account.java" afterPath="$PROJECT_DIR$/src/main/java/stock/beans/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/beans/Stock.java" afterPath="$PROJECT_DIR$/src/main/java/stock/beans/Stock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/dao/IAccountDao.java" afterPath="$PROJECT_DIR$/src/main/java/stock/dao/IAccountDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/dao/IStockDao.java" afterPath="$PROJECT_DIR$/src/main/java/stock/dao/IStockDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/service/BuyStockServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/stock/service/BuyStockServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/service/IBuyStockService.java" afterPath="$PROJECT_DIR$/src/main/java/stock/service/IBuyStockService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stock/test/MyTest.java" afterPath="$PROJECT_DIR$/src/main/java/stock/test/MyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" />
-    </list>
+    <list default="true" id="e0eea4ed-2336-44dd-941c-fea79958ddf0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -700,7 +682,7 @@
       <workItem from="1537060628240" duration="9066000" />
       <workItem from="1537080822979" duration="295000" />
       <workItem from="1540296892927" duration="34510000" />
-      <workItem from="1540609621187" duration="7220000" />
+      <workItem from="1540609621187" duration="7325000" />
     </task>
     <servers />
   </component>
@@ -737,7 +719,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53511000" />
+    <option name="totallyTimeSpent" value="53616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="745" y="0" width="695" height="900" extended-state="6" />
