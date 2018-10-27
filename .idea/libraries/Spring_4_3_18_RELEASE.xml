@@ -20,12 +20,14 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-tx-4.3.18.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-orm-4.3.18.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-test-4.3.18.RELEASE.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/Java框架包/aspectj/aspectjweaver.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/Java框架包/commons-dbcp-1.4/commons-dbcp-1.4.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/Java框架包/commons-dbcp2-2.5.0/commons-dbcp2-2.5.0.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/Java框架包/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/Java框架包/commons-pool-1.6/commons-pool-1.6.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.39-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectjweaver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/c3p0-0.9.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-dbcp-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-pool-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.39-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mchange-commons-java-0.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mybatis-spring-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mybatis-3.4.6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
