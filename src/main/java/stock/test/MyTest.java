@@ -4,8 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import stock.beans.Account;
+import stock.beans.Stock;
 import stock.service.BuyStockException;
 import stock.service.IBuyStockService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyTest {
     private IBuyStockService service;
@@ -33,4 +38,21 @@ public class MyTest {
         }
     }
 
+    @Test
+    public void test03() {
+        List<Stock> stocks = new ArrayList<>();
+        stocks = service.selectAllStock();
+        for (Stock stock : stocks) {
+            System.out.println(stock);
+        }
+    }
+
+    @Test
+    public void test04() {
+        List<Account> accounts = new ArrayList<>();
+        accounts = service.selectAllAccount();
+        for (Account account : accounts) {
+            System.out.println(account);
+        }
+    }
 }

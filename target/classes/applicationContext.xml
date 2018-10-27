@@ -63,12 +63,19 @@
 
     <context:property-placeholder location="jdbc.properties" />
 
-    <bean id="accountDao" class="stock.dao.AccountDaoImpl">
+    <bean id="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="mybatis.xml" />
         <property name="dataSource" ref="myDataSource" />
     </bean>
-
-    <bean id="stockDao" class="stock.dao.StockDaoImpl">
-        <property name="dataSource" ref="myDataSource" />
+    
+    <bean id="accountDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+       <property name="sqlSessionFactory" ref="mySqlSessionFactory" />
+        <property name="mapperInterface" value="stock.dao.IAccountDao" />
+    </bean>
+    
+    <bean id="stockDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionFactory" ref="mySqlSessionFactory" />
+        <property name="mapperInterface" value="stock.dao.IStockDao" />
     </bean>
 
     <bean id="buyStockService" class="stock.service.BuyStockServiceImpl">

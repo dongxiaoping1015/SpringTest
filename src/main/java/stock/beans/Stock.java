@@ -16,6 +16,15 @@ public class Stock {
         this.sid = sid;
     }
 
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "sid=" + sid +
+                ", sname='" + sname + '\'' +
+                ", count=" + count +
+                '}';
+    }
+
     public String getSname() {
         return sname;
     }

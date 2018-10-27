@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stock.dao.IAccountDao">
+    <insert id="insertAccount">
+        insert into account(aname, balance) VALUES (#{aname}, #{money})
+    </insert>
+
+    <update id="updateAccount">
+        update account set balance=balance
+        <if test="isBuy">
+            -#{money}
+        </if>
+        <if test="!isBuy">
+            +#{money}
+        </if>
+        where aname= #{aname}
+    </update>
+
+    <select id="selectAllAccount" resultType="stock.beans.Account">
+        select aid, aname, balance FROM account
+    </select>
+</mapper>
+

@@ -1,7 +1,14 @@
 package stock.dao;
 
-public interface IStockDao {
-    void insertStock(String sname, int amount);
+import org.apache.ibatis.annotations.Param;
+import stock.beans.Stock;
 
-    void updateStock(String sname, int amount, boolean isBuy);
+import java.util.List;
+
+public interface IStockDao {
+    void insertStock(@Param("sname") String sname,@Param("amount") int amount);
+
+    void updateStock(@Param("sname")String sname,@Param("amount") int amount,@Param("isBuy") boolean isBuy);
+
+    List<Stock> selectAllStock();
 }

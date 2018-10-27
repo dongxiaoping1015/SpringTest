@@ -3,8 +3,12 @@ package stock.service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import stock.beans.Account;
+import stock.beans.Stock;
 import stock.dao.IAccountDao;
 import stock.dao.IStockDao;
+
+import java.util.List;
 
 public class BuyStockServiceImpl implements IBuyStockService {
     private IAccountDao adao;
@@ -38,7 +42,15 @@ public class BuyStockServiceImpl implements IBuyStockService {
         boolean isBuy = true;
         adao.updateAccount(aname, money, isBuy);
         if (true)
-            throw new BuyStockException("购买股票异常");
+            //throw new BuyStockException("购买股票异常");
         sdao.updateStock(sname, amount, isBuy);
+    }
+
+    public List<Stock> selectAllStock() {
+        return sdao.selectAllStock();
+    }
+
+    public List<Account> selectAllAccount() {
+        return adao.selectAllAccount();
     }
 }

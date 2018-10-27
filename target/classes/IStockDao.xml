@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stock.dao.IStockDao">
+    <insert id="insertStock">
+        insert into stock(sname, count) VALUES (#{sname}, #{amount})
+    </insert>
+
+    <update id="updateStock">
+        update stock set count=count
+        <if test="isBuy">
+            +#{amount}
+        </if>
+        <if test="!isBuy">
+            -#{amount}
+        </if>
+        where sname= #{sname}
+    </update>
+
+    <select id="selectAllStock" resultType="stock.beans.Stock">
+        select sid,sname, count FROM stock
+    </select>
+
+</mapper>
+
