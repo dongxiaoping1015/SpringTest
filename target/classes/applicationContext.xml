@@ -67,20 +67,27 @@
         <property name="configLocation" value="mybatis.xml" />
         <property name="dataSource" ref="myDataSource" />
     </bean>
-    
-    <bean id="accountDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-       <property name="sqlSessionFactory" ref="mySqlSessionFactory" />
-        <property name="mapperInterface" value="stock.dao.IAccountDao" />
-    </bean>
-    
-    <bean id="stockDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="sqlSessionFactory" ref="mySqlSessionFactory" />
-        <property name="mapperInterface" value="stock.dao.IStockDao" />
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="mySqlSessionFactory" />
+        <property name="basePackage" value="stock.dao" />
     </bean>
 
+    <!--<bean id="accountDao" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+       <!--<property name="sqlSessionFactory" ref="mySqlSessionFactory" />-->
+        <!--<property name="mapperInterface" value="stock.dao.IAccountDao" />-->
+    <!--</bean>-->
+    <!---->
+    <!--<bean id="stockDao" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--<property name="sqlSessionFactory" ref="mySqlSessionFactory" />-->
+        <!--<property name="mapperInterface" value="stock.dao.IStockDao" />-->
+    <!--</bean>-->
+
     <bean id="buyStockService" class="stock.service.BuyStockServiceImpl">
-        <property name="adao" ref="accountDao" />
-        <property name="sdao" ref="stockDao" />
+        <property name="adao" ref="IAccountDao" />
+        <property name="sdao" ref="IStockDao" />
+        <!--<property name="adao" ref="accountDao" />-->
+        <!--<property name="sdao" ref="stockDao" />-->
     </bean>
 
     <!--<bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
